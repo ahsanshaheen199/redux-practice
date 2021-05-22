@@ -1,0 +1,19 @@
+{
+	"name": "redux-practice",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "webpack"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"redux": "^4.1.0"
+	},
+	"devDependencies": {
+		"webpack": "^5.37.1",
+		"webpack-cli": "^4.7.0"
+	}
+}
