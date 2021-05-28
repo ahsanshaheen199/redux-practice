@@ -70,13 +70,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./reducers/ingredients.js":
+/*!*********************************!*\
+  !*** ./reducers/ingredients.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst ingredientsReducer = ( ingredients = [], action ) => {\r\n    switch (action.type) {\r\n\t\tcase 'ADD_INGREDIENT':\r\n\t\t\treturn [\r\n\t\t\t\t\t...ingredients,\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\trecipe: action.recipe,\r\n\t\t\t\t\t\tname: action.name,\r\n\t\t\t\t\t\tquantity: action.quantity,\r\n\t\t\t\t\t},\r\n\t\t\t\t];\r\n\t}\r\n    return ingredients;\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ingredientsReducer);\n\n//# sourceURL=webpack://redux-practice/./reducers/ingredients.js?");
+
+/***/ }),
+
+/***/ "./reducers/recipes.js":
+/*!*****************************!*\
+  !*** ./reducers/recipes.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst recipesReducer = ( recipes = [], action ) => {\r\n    switch (action.type) {\r\n\t\tcase 'ADD_RECIPE':\r\n\t\t\treturn [...recipes, { name: action.name }];\r\n\t}\r\n    return recipes;\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (recipesReducer);\n\n//# sourceURL=webpack://redux-practice/./reducers/recipes.js?");
+
+/***/ }),
+
 /***/ "./reducers/root.js":
 /*!**************************!*\
   !*** ./reducers/root.js ***!
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst initialState = {\r\n\trecipes: [\r\n\t\t{\r\n\t\t\tname: 'Omelette',\r\n\t\t},\r\n\t],\r\n\tingredients: [\r\n\t\t{\r\n\t\t\trecipe: 'Omelette',\r\n\t\t\tname: 'Egg',\r\n\t\t\tquantity: 2,\r\n\t\t},\r\n\t],\r\n};\r\n\r\nconst rootReducer = (state = initialState, action) => {\r\n\tswitch (action.type) {\r\n\t\tcase 'ADD_RECIPE':\r\n\t\t\treturn {\r\n\t\t\t\t...state,\r\n\t\t\t\trecipes: [...state.recipes, { name: action.name }],\r\n\t\t\t};\r\n\t\tcase 'ADD_INGREDIENT':\r\n\t\t\treturn {\r\n\t\t\t\t...state,\r\n\t\t\t\tingredients: [\r\n\t\t\t\t\t...state.ingredients,\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\trecipe: action.recipe,\r\n\t\t\t\t\t\tname: action.name,\r\n\t\t\t\t\t\tquantity: action.quantity,\r\n\t\t\t\t\t},\r\n\t\t\t\t],\r\n\t\t\t};\r\n\t\tdefault:\r\n\t\t\treturn state;\r\n\t}\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (rootReducer);\r\n\n\n//# sourceURL=webpack://redux-practice/./reducers/root.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _ingredients__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ingredients */ \"./reducers/ingredients.js\");\n/* harmony import */ var _recipes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./recipes */ \"./reducers/recipes.js\");\n\r\n\r\n\r\n\r\n\r\nconst rootReducer = (0,redux__WEBPACK_IMPORTED_MODULE_2__.combineReducers)({\r\n\trecipes: _recipes__WEBPACK_IMPORTED_MODULE_1__.default,\r\n\tingredients: _ingredients__WEBPACK_IMPORTED_MODULE_0__.default \r\n});\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (rootReducer);\r\n\n\n//# sourceURL=webpack://redux-practice/./reducers/root.js?");
 
 /***/ }),
 
